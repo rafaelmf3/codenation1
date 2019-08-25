@@ -95,42 +95,48 @@ const accelerations = [
 export default function Acceleration() {
   return (
     <View style={styles.container}>
-      <Image
-        source={{
-          uri:
-            "https://forum.codenation.com.br/uploads/default/original/2X/2/2d2d2a9469f0171e7df2c4ee97f70c555e431e76.png"
-        }}
-        style={styles.image}
-      />
-      <View style={styles.content}>
-        <Text style={styles.acc}>Acelerações</Text>
-        <FlatList
-          data={accelerations}
-          keyExtractor={item => item.slug}
-          renderItem={({ item }) => <AccelerationItem item={item} />}
-          showsVerticalScrollIndicator={true}
+      <View style={styles.containerimg}>
+        <Image
+          source={{
+            uri:
+              "https://forum.codenation.com.br/uploads/default/original/2X/2/2d2d2a9469f0171e7df2c4ee97f70c555e431e76.png"
+          }}
+          style={styles.image}
         />
       </View>
+
+      <Text style={styles.acc}>Acelerações</Text>
+      <FlatList
+        data={accelerations}
+        keyExtractor={item => item.slug}
+        renderItem={({ item }) => <AccelerationItem item={item} />}
+        showsVerticalScrollIndicator={false}
+        style={styles.flat}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   image: {
-    marginTop: 10,
+    marginTop: 20,
     marginLeft: 10,
     width: 290,
-    height: 100
+    height: 100,
+    padding: 5
   },
-  content: {
-    borderTopWidth: 4,
-    borderTopColor: "#7800FF",
-    margin: 20
+  containerimg: {
+    borderBottomWidth: 2,
+    borderBottomColor: "#7800ff"
   },
   acc: {
-    marginTop: 20,
+    margin: 20,
     color: "#7800ff",
     fontSize: 30,
     marginBottom: 15
+  },
+  flat: {
+    marginLeft: 20,
+    marginRight: 20
   }
 });

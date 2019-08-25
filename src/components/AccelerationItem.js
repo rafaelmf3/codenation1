@@ -3,8 +3,8 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import nophoto from "../assets/nophoto.jpeg";
 
 export default function AccelerationItem({ item }) {
-  const dataFormated = function dataFormatada() {
-    var data = item.subscription_finish_at,
+  const dateFormated = function dataFormatada() {
+    const data = new Date(item.subscription_finish_at),
       dia = data.getDate().toString(),
       diaF = dia.length == 1 ? "0" + dia : dia,
       mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
@@ -22,7 +22,7 @@ export default function AccelerationItem({ item }) {
       <View style={styles.content}>
         <Text style={styles.title}>{item.name}</Text>
         <Text style={styles.location}>{item.location}</Text>
-        <Text style={styles.date}>{dataFormated}</Text>
+        <Text style={styles.date}>{dateFormated()}</Text>
       </View>
     </View>
   );
