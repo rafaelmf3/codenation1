@@ -4,7 +4,7 @@ import nophoto from "../assets/nophoto.jpeg";
 
 export default function AccelerationItem({ item }) {
   handleData = () => {
-    const data = new Date(item.start_at);
+    const data = new Date(item.subscription_finish_at);
     dia = data.getDate().toString();
     diaF = dia.length == 1 ? "0" + dia : dia;
     mes = (data.getMonth() + 1).toString();
