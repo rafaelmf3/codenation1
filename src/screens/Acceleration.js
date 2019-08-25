@@ -94,7 +94,7 @@ const accelerations = [
 
 export default function Acceleration() {
   return (
-    <View style={styles.container}>
+    <>
       <View style={styles.containerimg}>
         <Image
           source={{
@@ -113,7 +113,7 @@ export default function Acceleration() {
         showsVerticalScrollIndicator={false}
         style={styles.flat}
       />
-    </View>
+    </>
   );
 }
 
